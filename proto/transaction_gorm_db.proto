@@ -1,6 +1,6 @@
 syntax = "proto3";
 
-import "google/protobuf/timestamp.proto";
+// import "google/protobuf/timestamp.proto";
 import "protoc-gen-gorm/options/gorm.proto";
 
 package transaction.service.v1;
@@ -17,5 +17,5 @@ message Transactions {
     string customer_name = 3[(gorm.field).tag = {not_null: true}];
     uint32 quatity = 4[(gorm.field).tag = {not_null: true}];
     double total_price = 5[(gorm.field).tag = {not_null: true}];
-    google.protobuf.Timestamp created_at = 6[(gorm.field).tag = {not_null: true}];
+    string created_at = 6[(gorm.field).tag = {not_null: true}];
 }

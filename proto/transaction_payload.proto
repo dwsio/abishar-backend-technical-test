@@ -3,7 +3,7 @@ syntax = "proto3";
 package transaction.service.v1;
 option go_package = "./pb";
 
-import "google/protobuf/timestamp.proto";
+// import "google/protobuf/timestamp.proto";
 
 message ErrorBodyResponse {
     bool error = 1;
@@ -21,7 +21,7 @@ message TransactionData {
     string customer_name = 2;
     uint32 quatity = 3;
     double total_price = 4;
-    google.protobuf.Timestamp created_at = 5;
+    string created_at = 5;
 }
 
 message CreateTransactionMultipleRequest {
