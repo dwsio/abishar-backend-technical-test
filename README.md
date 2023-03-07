@@ -1,7 +1,7 @@
 ﻿# abishar-backend-technical-test
 Task:
 <br/>
-![alt text](https://github.com/dwsio/abishar-backend-technical-test/blob/main/img/task.JPG?raw=true)
+![alt text](https://github.com/dwsio/abishar-backend-technical-test/blob/main/img/task.jpg?raw=true)
 
 Steps to run:
 1. Clone this repo 
@@ -14,6 +14,6 @@ Steps to run:
 
 Result:
 <br/>
-![alt text](https://github.com/dwsio/abishar-backend-technical-test/blob/main/img/1.PNG?raw=true)
+![alt text](https://github.com/dwsio/abishar-backend-technical-test/blob/main/img/1.png?raw=true)
 <br/>
-![alt text](https://github.com/dwsio/abishar-backend-technical-test/blob/main/img/2.PNG?raw=true)
+![alt text](https://github.com/dwsio/abishar-backend-technical-test/blob/main/img/2.png?raw=true)
