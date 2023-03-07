@@ -17,7 +17,7 @@ func (s *Server) CreateTransactionMultiple(ctx context.Context, req *pb.CreateTr
 	}
 
 	for _, data := range req.GetData() {
-		s.provider.UpdateOrCreateTransaction(ctx, &pb.Transactions{
+		_, err := s.provider.UpdateOrCreateTransaction(ctx, &pb.Transactions{
 			RequestId: req.GetRequestId(),
 			ProductId: data.GetProductId(),
 			CustomerName: data.GetCustomerName(),
@@ -25,6 +25,9 @@ func (s *Server) CreateTransactionMultiple(ctx context.Context, req *pb.CreateTr
 			TotalPrice: data.GetTotalPrice(),
 			CreatedAt: timestamppb.Now(),
 		})
+		if err != nil {
+			return nil, err
+		}
 	}
 
 	return result, nil
