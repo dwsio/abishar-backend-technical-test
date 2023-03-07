@@ -2,6 +2,7 @@ package api
 
 import (
 	"context"
+	"google.golang.org/protobuf/types/known/timestamppb"
 
 	
 	"abishar-backend-technical-test/server/pb"
@@ -15,9 +16,16 @@ func (s *Server) CreateTransactionMultiple(ctx context.Context, req *pb.CreateTr
 		Message: "Success",
 	}
 
-	// for i, v := range req.GetData() {
-	// 	i
-	// }
+	for _, data := range req.GetData() {
+		s.provider.UpdateOrCreateTransaction(ctx, &pb.Transactions{
+			RequestId: req.GetRequestId(),
+			ProductId: data.GetProductId(),
+			CustomerName: data.GetCustomerName(),
+			Quatity: data.GetQuatity(),
+			TotalPrice: data.GetTotalPrice(),
+			CreatedAt: timestamppb.Now(),
+		})
+	}
 
 	return result, nil
 

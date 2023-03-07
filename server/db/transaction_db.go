@@ -10,7 +10,7 @@ import (
 	"gorm.io/gorm"
 )
 
-func (p *GormProvider) UpdateOrCreateMapping(ctx context.Context, data *pb.Transactions) (*pb.Transactions, error) {
+func (p *GormProvider) UpdateOrCreateTransaction(ctx context.Context, data *pb.Transactions) (*pb.Transactions, error) {
 	if data.Id > 0 {
 		model := &pb.Transactions{
 			Id: data.Id,

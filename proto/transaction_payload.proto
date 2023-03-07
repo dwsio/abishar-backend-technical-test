@@ -5,13 +5,6 @@ option go_package = "./pb";
 
 import "google/protobuf/timestamp.proto";
 
-enum ThirdPartyType {
-    All = 0;
-    NeedMapping = 1;
-    IsMapped = 2;
-    AllMapping = 3;
-}
-
 message ErrorBodyResponse {
     bool error = 1;
     uint32 code = 2;
@@ -32,8 +25,8 @@ message TransactionData {
 }
 
 message CreateTransactionMultipleRequest {
-    uint32 request_id = 3;
-    repeated TransactionData data = 4;
+    uint32 request_id = 1;
+    repeated TransactionData data = 2;
 }
 
 message CreateTransactionMultipleResponse {

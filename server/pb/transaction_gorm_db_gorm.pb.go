@@ -8,6 +8,5 @@ package pb
 
 import (
 	_ "github.com/infobloxopen/protoc-gen-gorm/options"
-	_ "google.golang.org/genproto/googleapis/api/annotations"
 	_ "google.golang.org/protobuf/types/known/timestamppb"
 )
