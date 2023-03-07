@@ -1,6 +1,6 @@
 ﻿# abishar-backend-technical-test
 
-step to run:
+Steps to run:
 1. Clone this repo 
 2. Create database in postgreSQL with name `abishar-transactions`
 3. Create table inside the database with name `transactions`
