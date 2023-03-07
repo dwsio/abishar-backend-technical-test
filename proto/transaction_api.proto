@@ -42,7 +42,8 @@ service ApiService {
 
     rpc CreateTransactionMultiple(CreateTransactionMultipleRequest) returns (CreateTransactionMultipleResponse) {
         option (google.api.http) = {
-            get: "/api/transaction/multiple"
+            post: "/api/transaction/multiple"
+            body: "*"
         };
         option (grpc.gateway.protoc_gen_openapiv2.options.openapiv2_operation) = {
             tags: ["Transaction"]

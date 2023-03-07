@@ -42,7 +42,7 @@
       }
     },
     "/api/transaction/multiple": {
-      "get": {
+      "post": {
         "summary": "Create Multiple Transaction API",
         "description": "This API for create multiple transaction",
         "operationId": "ApiService_CreateTransactionMultiple",
@@ -62,11 +62,12 @@
         },
         "parameters": [
           {
-            "name": "requestId",
-            "in": "query",
-            "required": false,
-            "type": "integer",
-            "format": "int64"
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1CreateTransactionMultipleRequest"
+            }
           }
         ],
         "tags": [
@@ -100,6 +101,22 @@
           "items": {
             "type": "object",
             "$ref": "#/definitions/protobufAny"
+          }
+        }
+      }
+    },
+    "v1CreateTransactionMultipleRequest": {
+      "type": "object",
+      "properties": {
+        "requestId": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "data": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/v1TransactionData"
           }
         }
       }
