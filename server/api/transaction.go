@@ -2,6 +2,9 @@ package api
 
 import (
 	"context"
+	"github.com/sirupsen/logrus"
+	"google.golang.org/grpc/codes"
+	"google.golang.org/grpc/status"
 	"google.golang.org/protobuf/types/known/timestamppb"
 
 	
@@ -14,6 +17,11 @@ func (s *Server) CreateTransactionMultiple(ctx context.Context, req *pb.CreateTr
 		Error:   false,
 		Code:    200,
 		Message: "Success",
+	}
+
+	if len(req.GetData()) == 0 {
+		logrus.Println("[api][CreateTransactionMultiple] No Data Inserted")
+		return nil, status.Errorf(codes.InvalidArgument, "No Data Inserted")
 	}
 
 	for _, data := range req.GetData() {
