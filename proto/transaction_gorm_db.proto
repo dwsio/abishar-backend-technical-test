@@ -1,0 +1,25 @@
+syntax = "proto3";
+
+import "google/protobuf/timestamp.proto";
+import "google/api/field_behavior.proto";
+import "protoc-gen-gorm/options/gorm.proto";
+
+package transaction.service.v1;
+option go_package = "./pb";
+
+message Transactions {
+    option (gorm.opts) = {
+        ormable: true,
+        table: "transactions",
+    };
+    uint64 id = 1 [(gorm.field).tag = {primary_key: true not_null: true}];
+    uint64 request_id = 7[(gorm.field).tag = {not_null: true}];
+    uint32 product_id = 2[(gorm.field).tag = {not_null: true}];
+    string customer_name = 3[(gorm.field).tag = {not_null: true}];
+    uint32 quatity = 4[(gorm.field).tag = {not_null: true}];
+    double total_price = 5[(gorm.field).tag = {not_null: true}];
+    google.protobuf.Timestamp created_at = 6[
+        (google.api.field_behavior) = OUTPUT_ONLY,
+        (gorm.field).tag = {not_null: true}
+    ];
+}

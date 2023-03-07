@@ -1,0 +1,38 @@
+syntax = "proto3";
+
+package transaction.service.v1;
+option go_package = "./pb";
+
+import "google/protobuf/timestamp.proto";
+
+enum ThirdPartyType {
+    All = 0;
+    NeedMapping = 1;
+    IsMapped = 2;
+    AllMapping = 3;
+}
+
+message HealthCheckRequest {}
+message HealthCheckResponse {
+    string message = 1;
+}
+
+message TransactionData {
+    uint32 product_id = 1;
+    string customer_name = 2;
+    uint32 quatity = 3;
+    double total_price = 4;
+    google.protobuf.Timestamp created_at = 5;
+}
+
+message CreateTransactionMultipleRequest {
+    uint32 request_id = 3;
+    repeated TransactionData data = 4;
+}
+
+message CreateTransactionMultipleResponse {
+    bool error = 1;
+    uint32 code = 2;
+    string message = 3;
+}
+
