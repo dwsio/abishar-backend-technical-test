@@ -16,6 +16,9 @@ var _ = proto.Marshal
 var _ = fmt.Errorf
 var _ = math.Inf
 
+func (this *ErrorBodyResponse) Validate() error {
+	return nil
+}
 func (this *HealthCheckRequest) Validate() error {
 	return nil
 }

@@ -12,6 +12,12 @@ enum ThirdPartyType {
     AllMapping = 3;
 }
 
+message ErrorBodyResponse {
+    bool error = 1;
+    uint32 code = 2;
+    string message = 3;
+}
+
 message HealthCheckRequest {}
 message HealthCheckResponse {
     string message = 1;

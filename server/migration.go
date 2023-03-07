@@ -3,15 +3,14 @@ package main
 import (
 	"os"
 
-	"abishar-backend-technical-test/pb"
+	pb "abishar-backend-technical-test/server/pb"
 	"github.com/sirupsen/logrus"
 	"github.com/urfave/cli"
 )
 
 func migrationStart() {
 	if err := db_main.AutoMigrate(
-		&pb.MappingORM{},
-		&pb.CurrencyORM{},
+		&pb.Transactions{},
 	); err != nil {
 		logrus.Fatalf("Migration failed: %v", err)
 		os.Exit(1)

@@ -5,15 +5,14 @@ import (
 	"errors"
 
 	pb "abishar-backend-technical-test/server/pb"
-	"github.com/sirupsen/logrus"
 	"google.golang.org/grpc/codes"
 	"google.golang.org/grpc/status"
 	"gorm.io/gorm"
 )
 
-func (p *GormProvider) UpdateOrCreateMapping(ctx context.Context, data *pb.TransactionDataORM) (*pb.TransactionDataORM, error) {
+func (p *GormProvider) UpdateOrCreateMapping(ctx context.Context, data *pb.Transactions) (*pb.Transactions, error) {
 	if data.Id > 0 {
-		model := &pb.TransactionDataORM{
+		model := &pb.Transactions{
 			Id: data.Id,
 		}
 		if err := p.db_main.Model(&model).Updates(&data).Error; err != nil {

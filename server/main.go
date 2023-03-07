@@ -197,17 +197,11 @@ func grpcServer(port int) error {
 	defer svcConn.CloseAllServicesConn()
 
 	apiServer := api.New(
-		config.JWTSecret,
-		config.JWTDuration,
 		db_main,
 		svcConn,
 	)
-	authInterceptor := api.NewAuthInterceptor(apiServer.GetManager())
 
-	unaryInterceptorOpt := grpc.UnaryInterceptor(api.UnaryInterceptors(authInterceptor))
-	streamInterceptorOpt := grpc.StreamInterceptor(api.StreamInterceptors(authInterceptor))
-
-	s = grpc.NewServer(unaryInterceptorOpt, streamInterceptorOpt)
+	s = grpc.NewServer()
 	pb.RegisterApiServiceServer(s, apiServer)
 	grpc_health_v1.RegisterHealthServer(s, health.NewServer())
 

@@ -8,7 +8,7 @@ import (
 )
 
 type Provider interface {
-	CreateTransaction(ctx context.Context, data *pb.TransactionData) (error)
+	CreateTransaction(ctx context.Context, data *pb.Transactions) (*pb.Transactions, error)
 }
 
 type GormProvider struct {

@@ -2,7 +2,6 @@ package services
 
 import (
 	"fmt"
-	"os"
 
 	"github.com/sirupsen/logrus"
 	"google.golang.org/grpc"

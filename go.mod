@@ -3,18 +3,14 @@ module abishar-backend-technical-test
 go 1.19
 
 require (
-	github.com/dgrijalva/jwt-go v3.2.1-0.20200107013213-dc14462fd587+incompatible
 	github.com/golang/protobuf v1.5.2
-	github.com/grpc-ecosystem/go-grpc-middleware v1.3.0
 	github.com/grpc-ecosystem/grpc-gateway/v2 v2.15.2
 	github.com/infobloxopen/protoc-gen-gorm v1.1.2
 	github.com/joho/godotenv v1.5.1
 	github.com/mwitkow/go-proto-validators v0.3.2
 	github.com/sirupsen/logrus v1.8.0
-	github.com/speps/go-hashids v2.0.0+incompatible
 	github.com/spf13/viper v1.15.0
 	github.com/urfave/cli v1.22.12
-	golang.org/x/crypto v0.0.0-20220722155217-630584e8d5aa
 	google.golang.org/genproto v0.0.0-20230223222841-637eb2293923
 	google.golang.org/grpc v1.53.0
 	google.golang.org/grpc/cmd/protoc-gen-go-grpc v1.3.0
@@ -49,6 +45,7 @@ require (
 	github.com/spf13/jwalterweatherman v1.1.0 // indirect
 	github.com/spf13/pflag v1.0.5 // indirect
 	github.com/subosito/gotenv v1.4.2 // indirect
+	golang.org/x/crypto v0.0.0-20220722155217-630584e8d5aa // indirect
 	golang.org/x/net v0.7.0 // indirect
 	golang.org/x/sys v0.5.0 // indirect
 	golang.org/x/text v0.7.0 // indirect

@@ -19,8 +19,6 @@ type Config struct {
 	CorsAllowedMethods []string `config:"CORS_ALLOWED_METHODS"`
 	CorsAllowedOrigins []string `config:"CORS_ALLOWED_ORIGINS"`
 
-	JWTSecret   string `config:"JWT_SECRET"`
-	JWTDuration string `config:"JWT_DURATION"`
 	Dsn         string `config:"DB_DSN"`
 }
 
@@ -46,8 +44,6 @@ func initConfig() {
 		},
 		CorsAllowedMethods: []string{"GET", "POST"},
 		CorsAllowedOrigins: []string{"*"},
-		JWTSecret:          getEnv("JWT_SECRET", "secret"),
-		JWTDuration:        getEnv("JWT_DURATION", "48h"),
 		Dsn:                getEnv("DB_DSN", ""),
 	}
 

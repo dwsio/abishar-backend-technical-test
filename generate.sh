@@ -6,20 +6,20 @@ if [ -f "$swagger" ] ; then
     rm "$swagger"
 fi
 
-go get -d google.golang.org/protobuf/cmd/protoc-gen-go@latest
-go get -d google.golang.org/grpc/cmd/protoc-gen-go-grpc@latest
-go get -d github.com/mwitkow/go-proto-validators/protoc-gen-govalidators@latest
-go get -d github.com/grpc-ecosystem/grpc-gateway/v2/protoc-gen-grpc-gateway@latest
-go get -d github.com/grpc-ecosystem/grpc-gateway/v2/protoc-gen-openapiv2@latest
+# go get -d google.golang.org/protobuf/cmd/protoc-gen-go@latest
+# go get -d google.golang.org/grpc/cmd/protoc-gen-go-grpc@latest
+# go get -d github.com/mwitkow/go-proto-validators/protoc-gen-govalidators@latest
+# go get -d github.com/grpc-ecosystem/grpc-gateway/v2/protoc-gen-grpc-gateway@latest
+# go get -d github.com/grpc-ecosystem/grpc-gateway/v2/protoc-gen-openapiv2@latest
 
-go mod vendor
+# go mod vendor
 
-go install google.golang.org/protobuf/cmd/protoc-gen-go@latest
-go install google.golang.org/grpc/cmd/protoc-gen-go-grpc@latest
-go install github.com/complex64/protoc-gen-gorm@latest
-go install github.com/mwitkow/go-proto-validators/protoc-gen-govalidators@latest
-go install github.com/grpc-ecosystem/grpc-gateway/v2/protoc-gen-grpc-gateway@latest
-go install github.com/grpc-ecosystem/grpc-gateway/v2/protoc-gen-openapiv2@latest
+# go install google.golang.org/protobuf/cmd/protoc-gen-go@latest
+# go install google.golang.org/grpc/cmd/protoc-gen-go-grpc@latest
+# go install github.com/complex64/protoc-gen-gorm@latest
+# go install github.com/mwitkow/go-proto-validators/protoc-gen-govalidators@latest
+# go install github.com/grpc-ecosystem/grpc-gateway/v2/protoc-gen-grpc-gateway@latest
+# go install github.com/grpc-ecosystem/grpc-gateway/v2/protoc-gen-openapiv2@latest
 
 
 protoc --proto_path=./proto ./proto/*.proto \
