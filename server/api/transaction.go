@@ -31,7 +31,7 @@ func (s *Server) CreateTransactionMultiple(ctx context.Context, req *pb.CreateTr
 			CustomerName: data.GetCustomerName(),
 			Quatity: data.GetQuatity(),
 			TotalPrice: data.GetTotalPrice(),
-			CreatedAt: timestamppb.Now(),
+			// CreatedAt: timestamppb.Now(),
 		})
 		if err != nil {
 			return nil, err
