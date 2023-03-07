@@ -14,7 +14,7 @@ import (
 	"context"
 	"time"
 
-	"bitbucket.bri.co.id/scm/addons/addons-bg-service/server/db"
+	"abishar-backend-technical-test/server/db"
 )
 
 // AuthTokenKey is the key used within our metadata to store a JWT
